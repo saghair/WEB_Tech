@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Project Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h2, h3 {
+      color: #0a466e;
+    }
+    .info-section input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+    .task-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #0a466e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .task-buttons button:hover {
+      background-color: #08314c;
+    }
+  </style>
+</head>
+<body>
+
+<h2>STUDENT NAME: Abdulrahman Reyad Hashmi Saghair</h2>
+
+<h2>CURRENT DATE: 13/06/2025</h2>
+
+<h2>SUBJECT NAME: WEB Technologies</h2>
+
+<h3>INFORMATION ABOUT ME: I am from Libya and I am 25 years old</h3>
+
+
+<h3>Task Details:</h3>
+<div class="task-buttons">
+  <button onclick="signup()">Task 1</button>
+  <button onclick="showPerson()">Task 2</button>
+  <button onclick="start()">Task 3</button>
+  <button onclick="showFruit()">Task 4</button>
+  <button onclick="calculate()">Task 5</button>
+  <button onclick="showArray()">Task 6</button>
+  <button onclick="doubleArray()">Task 7</button>
+  <button onclick="tenthChar()">Task 8</button>
+  <button onclick="lastElement()">Task 9</button>
+  <input id="digitInput" oninput="checkDigits(this)" placeholder="Task 10: Only 10 digits allowed">
+</div>
+
+<h3>Mini project Title:</h3>
+<input type="text" placeholder="FlashCard Quiz App">
+<h3>Information:</h3>
+<ol>
+  <li>Problem Statement: Describe the problem your project addresses: Some students are having difficulties to sit down and study using papers and pens or any physical material. they easily lose attention or get board and it is usually not easy to remember or study well like that</li>
+  <li>Objective: Explain the purpose of your project: Helping the students have a more fun studying and easy experience. The web app will be simple and interactive.</li>
+  <li>Goal: Define the end goals and intended outcomes of your project: A very fun web app that students can use on daily basis to refresh their memory or use for fun to learn new things or ther own subjects.</li>
+  <li>Result/Output: Outline the expected or actual results: App is still in test stage and is online but not complete yet.</li>
+  <li>Technology Used: List the tools, languages, or frameworks you used: Mainly AI (chat GPT), JS, Jquery, html and CSS.</li>
+  <li>User Audience: Identify the target audience or users of your project: Students of all ages as a main target but also anyone can use for a quick knowledge test.</li>
+  <li>Impact on Society: Discuss how your project could benefit society or people in general: Helping students study easier and lessen the burden on them before a test or an exam.</li>
+</ol>
+
+<h3>Flashcard Quiz App Screenshots</h3>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (55).png" alt="Screenshot 1" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (56).png" alt="Screenshot 2" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (57).png" alt="Screenshot 3" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (58).png" alt="Screenshot 4" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (59).png" alt="Screenshot 5" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (60).png" alt="Screenshot 6" width="400">
+  <img src="C:\Users\sagha\OneDrive\Pictures\Screenshots\Screenshot (61).png" alt="Screenshot 7" width="400">
+</div>
+
+<!-- JavaScript Section -->
+<script>
+  function signup() {
+    let name = prompt("Enter name:");
+    let age = prompt("Enter age:");
+    let gender = prompt("Enter gender:");
+    alert("Name: " + name + "\nAge: " + age + "\nGender: " + gender);
+  }
+
+  function showPerson() {
+    let person = {name: "Ali", age: 22, gender: "male"};
+    alert("Person: " + person.name + ", " + person.age + ", " + person.gender);
+  }
+
+  let timer = 60;
+  let interval;
+  function start() {
+    interval = setInterval(function() {
+      console.log("Timer: ", timer);
+      timer--;
+      if (timer < 0) clearInterval(interval);
+    }, 1000);
+  }
+  function stop() {
+    clearInterval(interval);
+  }
+  function reset() {
+    clearInterval(interval);
+    timer = 60;
+  }
+
+  function showFruit() {
+    let fruits = ["apple", "banana", "mango", "orange"];
+    alert("3rd fruit: " + fruits[2]);
+  }
+
+  function calculate() {
+    let a = Number(prompt("Enter first number:"));
+    let b = Number(prompt("Enter second number:"));
+    let op = prompt("Choose: + - * /");
+    let result;
+    if (op == "+") result = a + b;
+    else if (op == "-") result = a - b;
+    else if (op == "*") result = a * b;
+    else if (op == "/") result = b !== 0 ? a / b : "Cannot divide by 0";
+    alert("Result: " + result);
+  }
+
+  function showArray() {
+    let arr = [24, 25, 26, 27];
+    alert("Array: " + arr);
+  }
+
+  function doubleArray() {
+    let arr = [1, 2, 3];
+    let doubled = [];
+    for (let i = 0; i < arr.length; i++) {
+      doubled.push(arr[i] * 2);
+    }
+    alert("Doubled: " + doubled);
+  }
+
+  function tenthChar() {
+    let str = prompt("Enter a long string:");
+    if (str.length >= 10) alert("10th char is: " + str[9]);
+    else alert("It is less than 10 characters!");
+  }
+
+  function lastElement() {
+    let arr = ["Tesla", "Hyundai", "Fiat", "BMW"];
+    alert("Last item: " + arr[arr.length - 1]);
+  }
+
+  function checkDigits(el) {
+    if (el.value.length > 10) {
+      el.value = el.value.slice(0, 10);
+      alert("Only 10 digits allowed!");
+    }
+  }
+</script>
+
+</body>
+</html>
